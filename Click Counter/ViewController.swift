@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         //button
         var buttonInc = UIButton()
         buttonInc.frame = CGRectMake(150, 250, 60, 60)
-        buttonInc.setTitle("Click", forState: .Normal)
+        buttonInc.setTitle("More", forState: .Normal)
         buttonInc.setTitleColor(UIColor.blueColor(), forState: .Normal)
         self.view.addSubview(buttonInc)
         buttonInc.addTarget(self, action: "incrementCount", forControlEvents: UIControlEvents.TouchUpInside)
@@ -34,10 +34,18 @@ class ViewController: UIViewController {
         //button
         var buttonDec = UIButton()
         buttonDec.frame = CGRectMake(150, 300, 60, 60)
-        buttonDec.setTitle("Click", forState: .Normal)
+        buttonDec.setTitle("Less", forState: .Normal)
         buttonDec.setTitleColor(UIColor.redColor(), forState: .Normal)
         self.view.addSubview(buttonDec)
         buttonDec.addTarget(self, action: "decrementCount", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        //buttonBack
+        var buttonBack = UIButton()
+        buttonBack.frame = CGRectMake(150, 350, 60, 60)
+        buttonBack.setTitle("Click", forState: .Normal)
+        buttonBack.setTitleColor(UIColor.greenColor(), forState: .Normal)
+        self.view.addSubview(buttonBack)
+        buttonBack.addTarget(self, action: "changeBack", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
 
@@ -49,6 +57,10 @@ class ViewController: UIViewController {
     func decrementCount(){
         self.count--
         self.label.text = "\(self.count)"
+    }
+    
+    func changeBack(){
+        self.view.backgroundColor = UIColor.yellowColor()
     }
     
 }
